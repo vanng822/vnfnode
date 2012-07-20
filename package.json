@@ -1,0 +1,12 @@
+{
+  "name"          : "vnf",
+  "description"   : "javascript collection for browser and nodejs",
+  "keywords"      : ["override", "config"],
+  "author"        : "Nguyen Van Nhu",
+  "contributors"  : [],
+  "dependencies"  : [],
+  "lib"           : "lib",
+  "main"          : "./index.js",
+  "repository"    : {"type": "git", "url": "git://github.com/vanng822/vnf.git"},
+  "version"       : "0.0.1"
+}
