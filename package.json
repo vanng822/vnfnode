@@ -1,7 +1,7 @@
 {
   "name"          : "vnf",
-  "description"   : "javascript collection for browser and nodejs",
-  "keywords"      : ["override", "config"],
+  "description"   : "Javascript lib for nodejs",
+  "keywords"      : ["override", "config", "mobile detection", "html"],
   "author"        : "Nguyen Van Nhu",
   "contributors"  : [],
   "dependencies"  : [],
