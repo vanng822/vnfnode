@@ -3,7 +3,9 @@ var config = require('../../lib/config.js');
 var vows = require('vows');
 var assert = require('assert');
 
-vows.describe().addBatch({
+vows.describe(
+	'Configuration test suite'
+).addBatch({
 	'testOverrideProperty' : function() {
 		var obj = {
 			http : {
