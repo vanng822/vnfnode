@@ -5,6 +5,7 @@
   "author"        : "Nguyen Van Nhu",
   "contributors"  : [],
   "dependencies"  : [],
+  "devDependencies": ["vows"],
   "lib"           : "lib",
   "main"          : "./index.js",
   "repository"    : {"type": "git", "url": "git://github.com/vanng822/vnf.git"},
