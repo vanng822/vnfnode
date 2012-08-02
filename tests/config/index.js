@@ -3,9 +3,7 @@ var config = require('../../lib/config.js');
 var vows = require('vows');
 var assert = require('assert');
 
-vows.describe(
-	'Configuration test suite'
-).addBatch({
+vows.describe('Configuration test suite').addBatch({
 	'testOverrideProperty' : function() {
 		var obj = {
 			http : {
@@ -50,5 +48,42 @@ vows.describe(
 			'host' : '127.0.0.1',
 			'port' : 8000
 		});
+	}
+}).addBatch({
+	'ini2json' : {
+		topic : function() {
+			config.ini2json(__dirname + '/data/config.ini', this.callback);
+		},
+		'should return an object of' : function(err, obj) {
+			assert.ok(!err);
+			
+			assert.deepEqual(obj, {
+				http : {
+					host : '127.0.0.1',
+					port : '3000'
+				},
+				db : {
+					host : 'localhost',
+					port : '3069'
+				},
+				translation : {
+					NEXT : 'next',
+					NEWLINE : "test\ntesting"
+				}
+			});
+		}
+	},
+	'json2ini' : function() {
+		assert.equal(config.json2ini({
+			test : {
+				t : 1,
+				t2 : 2,
+				t3 : {
+					s : 2,
+					s2 : "testing\ntsting\ntesting"
+				}
+			},
+			test2 : 2
+		}), "test.t=1\ntest.t2=2\ntest.t3.s=2\ntest.t3.s2=testing\\ntsting\\ntesting\ntest2=2");
 	}
 }).export(module);
