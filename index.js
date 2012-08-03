@@ -8,8 +8,8 @@ var exportLibs = function(exports /*libs to include */) {
 		if (libfeatures.__namespace__ && libfeatures.__namespace__ != "") {
 			if (!obj.hasOwnProperty(libfeatures.__namespace__)) {
 				obj[libfeatures.__namespace__] = {};
-				obj = obj[libfeatures.__namespace__];
 			}
+			obj = obj[libfeatures.__namespace__];
 		}
 		for(feature in libfeatures) {
 			if (feature == '__namespace__') {
@@ -24,4 +24,4 @@ var exportLibs = function(exports /*libs to include */) {
 	return exports;
 };
 
-exportLibs(module.exports, 'html', 'config', 'mobile');
+exportLibs(module.exports, 'html', 'config', 'mobile', 'emptygif');
