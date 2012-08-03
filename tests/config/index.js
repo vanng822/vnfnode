@@ -85,5 +85,13 @@ vows.describe('Configuration test suite').addBatch({
 			},
 			test2 : 2
 		}), "test.t=1\ntest.t2=2\ntest.t3.s=2\ntest.t3.s2=testing\\ntsting\\ntesting\ntest2=2");
+	},
+	'jsonArray2ini' : function() {
+		assert.equal(config.json2ini({
+			test :[
+			10, 20, 40, 80, 160
+			],
+			test2 : ['testing','test']
+		}), "test.0=10\ntest.1=20\ntest.2=40\ntest.3=80\ntest.4=160\ntest2.0=testing\ntest2.1=test");
 	}
 }).export(module);
