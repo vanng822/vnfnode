@@ -5,15 +5,11 @@ var assert = require('assert');
 
 vows.describe('Testing of exporting modules').addBatch({
 	'count exported libs' : function() {
-		assert.equal(Object.keys(vnf).length, 4);
+		assert.equal(Object.keys(vnf).length, 3);
 	},
 	'html exported' : function() {
 		assert.ok(vnf.hasOwnProperty('html'));
 		assert.deepEqual(Object.keys(vnf.html), ['escape', 'meta', 'link', 'title']);
-	},
-	'mobile exported' : function() {
-		assert.ok(vnf.hasOwnProperty('mobile'));
-		assert.deepEqual(Object.keys(vnf.mobile), ['detect']);
 	},
 	'config exported' : function() {
 		assert.ok(vnf.hasOwnProperty('config'));
@@ -21,6 +17,6 @@ vows.describe('Testing of exporting modules').addBatch({
 	},
 	'http exported' : function() {
 		assert.ok(vnf.hasOwnProperty('http'));
-		assert.deepEqual(Object.keys(vnf.http), ['emptyGif']);
+		assert.deepEqual(Object.keys(vnf.http), ['mobileDetect', 'emptyGif']);
 	}
 }).export(module);
