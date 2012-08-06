@@ -56,7 +56,7 @@ vows.describe('Configuration test suite').addBatch({
 		},
 		'should return an object of' : function(err, obj) {
 			assert.ok(!err);
-			
+
 			assert.deepEqual(obj, {
 				http : {
 					host : '127.0.0.1',
@@ -88,10 +88,18 @@ vows.describe('Configuration test suite').addBatch({
 	},
 	'jsonArray2ini' : function() {
 		assert.equal(config.json2ini({
-			test :[
-			10, 20, 40, 80, 160
-			],
-			test2 : ['testing','test']
+			test : [10, 20, 40, 80, 160],
+			test2 : ['testing', 'test']
 		}), "test.0=10\ntest.1=20\ntest.2=40\ntest.3=80\ntest.4=160\ntest2.0=testing\ntest2.1=test");
+	}
+}).addBatch({
+	'scandir' : function() {
+		var c = config.scandir(__dirname + '/data');
+		assert.deepEqual(c, {
+			host : '127.0.0.1',
+			cssMaxAge : 31557600000,
+			jsMaxAge : 31557600000,
+			port : 8000
+		});
 	}
 }).export(module);

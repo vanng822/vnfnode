@@ -13,7 +13,7 @@ vows.describe('Testing of exporting modules').addBatch({
 	},
 	'config exported' : function() {
 		assert.ok(vnf.hasOwnProperty('config'));
-		assert.deepEqual(Object.keys(vnf.config), ['Config', 'overrideObject', 'overrideProperty', 'ini2json', 'json2ini']);
+		assert.deepEqual(Object.keys(vnf.config), ['Config', 'overrideObject', 'overrideProperty', 'ini2json', 'json2ini', 'scandir']);
 	},
 	'http exported' : function() {
 		assert.ok(vnf.hasOwnProperty('http'));
