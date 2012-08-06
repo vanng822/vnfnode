@@ -73,6 +73,22 @@ vows.describe('Configuration test suite').addBatch({
 			});
 		}
 	},
+	'ini2jsonSync' : function() {
+		assert.deepEqual(config.ini2jsonSync(__dirname + '/data/config.ini'), {
+			http : {
+				host : '127.0.0.1',
+				port : '3000'
+			},
+			db : {
+				host : 'localhost',
+				port : '3069'
+			},
+			translation : {
+				NEXT : 'next',
+				NEWLINE : "test\ntesting"
+			}
+		});
+	},
 	'json2ini' : function() {
 		assert.equal(config.json2ini({
 			test : {

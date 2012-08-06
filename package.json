@@ -9,5 +9,5 @@
   "lib"           : "lib",
   "main"          : "./index.js",
   "repository"    : {"type": "git", "url": "git://github.com/vanng822/vnfnode.git"},
-  "version"       : "0.1.2"
+  "version"       : "0.1.3"
 }
